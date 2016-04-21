@@ -7,6 +7,6 @@ RUN npm install --no-optional statsd@0.7.2 && \
 COPY config.js /etc/statsd.js
 ONBUILD COPY config.js /etc/statsd.js
 
-EXPOSE 8125
+EXPOSE 8125/udp
 
 CMD ["/node_modules/statsd/bin/statsd", "/etc/statsd.js"]
