@@ -1,4 +1,5 @@
 # Docker image for StatsD #
+[![](https://images.microbadger.com/badges/version/mateuszm/statsd.svg)](http://microbadger.com/images/mateuszm/statsd) [![](https://images.microbadger.com/badges/image/mateuszm/statsd.svg)](http://microbadger.com/images/mateuszm/statsd)
 
 This repository contains a minimal image with StatsD working. By default this image try to connect to Graphite on `localhost:2003` and expose `8125` port.
 
