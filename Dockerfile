@@ -1,10 +1,10 @@
-FROM node:5.10-slim
+FROM node:6.9.1-slim
 MAINTAINER mateuszmoneta@gmail.com
 
-RUN wget https://github.com/etsy/statsd/archive/master.tar.gz && \
-    npm install --no-optional master.tar.gz && \
+RUN wget https://github.com/mlowicki/statsd/archive/handle_stream_errors.tar.gz && \
+    npm install --no-optional handle_stream_errors.tar.gz && \
     npm cache clear && \
-    rm master.tar.gz
+    rm handle_stream_errors.tar.gz
 
 COPY config.js /etc/statsd.js
 ONBUILD COPY config.js /etc/statsd.js
