@@ -5,7 +5,9 @@ ENV STATSD_USER=statsd
 
 RUN npm install --no-optional statsd@0.7.2 && \
     npm cache clear && \
-    useradd $STATSD_USER
+    useradd $STATSD_USER && \
+    wget https://github.com/Yelp/dumb-init/releases/download/v1.2.0/dumb-init_1.2.0_amd64 -O /usr/local/bin/dumb-init && \
+    chmod +x /usr/local/bin/dumb-init
 
 COPY config.js /etc/statsd.js
 ONBUILD COPY config.js /etc/statsd.js
@@ -13,4 +15,5 @@ ONBUILD COPY config.js /etc/statsd.js
 EXPOSE 8125/udp
 USER $STATSD_USER
 
+ENTRYPOINT ["dumb-init"]
 CMD ["/node_modules/statsd/bin/statsd", "/etc/statsd.js"]
