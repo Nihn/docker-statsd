@@ -14,4 +14,4 @@ To alternate config you just need Dockerfile with:
 ```dockerfile
 FROM mateuszm/statsd
 ```
-and file named `config.js` in same directory. `ONBUILD` directive will copy your file to `StatsD` config directory. Configuration options can be found [here](https://github.com/etsy/statsd/blob/v0.7.2/exampleConfig.js).
+and file named `config.js` in same directory. `ONBUILD` directive will copy your file to `StatsD` config directory. Configuration options can be found [here](https://github.com/etsy/statsd/blob/v0.8.0/exampleConfig.js).
